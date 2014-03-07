@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <include layout="@layout/city_quality" />
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/hpBtn"
+                style="@style/btnStyle1"
+                android:text="黄浦区" />
+
+            <Button
+                android:id="@+id/lwBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="卢湾区" />
+
+            <Button
+                android:id="@+id/xhBtn"
+                android:layout_marginLeft="10dp"
+                style="@style/btnStyle1"
+                android:text="徐汇区" />
+
+            <Button
+                android:id="@+id/cnBtn"
+                android:layout_marginLeft="10dp"
+                style="@style/btnStyle1"
+                android:text="长宁区" />
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/jaBtn"
+                style="@style/btnStyle1"
+                android:text="静安区" />
+
+            <Button
+                android:id="@+id/ptBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="普陀区" />
+
+            <Button
+                android:id="@+id/zbBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="闸北区" />
+
+            <Button
+                android:id="@+id/hkBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="虹口区" />
+        </TableRow>
+       <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/ypBtn"
+                style="@style/btnStyle1"
+                android:text="杨浦区" />
+
+            <Button
+                android:id="@+id/mhBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="闵行区" />
+
+            <Button
+                android:id="@+id/bsBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="宝山区" />
+
+            <Button
+                android:id="@+id/jdBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="嘉定区" />
+        </TableRow>        
+         <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1" >
+             <Button
+                android:id="@+id/fxBtn"
+                style="@style/btnStyle1"
+                android:text="奉贤区" />
+
+           
+            <Button
+                android:id="@+id/jsBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="金山区" />
+
+            <Button
+                android:id="@+id/sjBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="松江区" />
+
+            <Button
+                android:id="@+id/qpBtn"
+                style="@style/btnStyle1"
+                android:layout_marginLeft="10dp"
+                android:text="青浦区" />
+        </TableRow>
+         <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/pdBtn"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="浦东新区" />
+        </TableRow>
+    </TableLayout>
+    </ScrollView>
+ <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_weight="0.8"
+        android:orientation="vertical" >
+    </TableLayout>
+</LinearLayout>

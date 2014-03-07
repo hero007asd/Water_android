@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orangered"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="返回" >
+            </Button>
+
+            <TextView
+                android:id="@+id/titleTxt"
+                style="@style/mediaBlackFont"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="当前区域" >
+            </TextView>
+
+            
+        </RelativeLayout>
+
+        <TextView
+            style="@style/mediaBlackFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="上海市水质情况总览" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal" >
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="3"
+                android:padding="3dip" >
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="浊度" />
+
+                    <TextView
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="ph值" />
+
+                    <TextView
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="余氯" />
+
+                    <TextView
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="电导率" />
+
+                    <TextView
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="溶解氧" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="20dp" >
+
+                    <TextView
+                        android:id="@+id/cityZDTxtView"
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="11.0" />
+
+                    <TextView
+                        android:id="@+id/cityPHTxtView"
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:text="5.3" />
+
+                    <TextView
+                        android:id="@+id/cityYLTxtView"
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="56" />
+
+                    <TextView
+                        android:id="@+id/cityDDLTxtView"
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="96.0" />
+
+                    <TextView
+                        android:id="@+id/cityRJYTxtView"
+                        style="@style/smallBlackFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="45.63" />
+                </TableRow>
+            </TableLayout>
+
+            <ImageView
+                android:id="@+id/qualityImg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
