@@ -2,8 +2,8 @@ package com.example.asynctask;
 
 import android.os.AsyncTask;
 
+import com.example.activity.StreetsListActivity;
 import com.example.utils.WebUtil;
-import com.example.waterquality.StreetsListActivity;
 
 public class getStreetNameTask extends AsyncTask<String, Integer, String> {
 	StreetsListActivity mActivity;

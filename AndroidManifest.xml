@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.waterquality"
+    package="com.example.activity"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -57,7 +57,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StreetQualityActivity"
+            android:name="com.example.activity.StreetQualityActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 

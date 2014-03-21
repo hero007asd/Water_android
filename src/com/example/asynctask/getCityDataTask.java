@@ -5,8 +5,8 @@ import org.json.JSONObject;
 
 import android.os.AsyncTask;
 
+import com.example.activity.BaseActivity;
 import com.example.utils.WebUtil;
-import com.example.waterquality.BaseActivity;
 
 public class getCityDataTask extends AsyncTask<String, Integer, String> {
 	BaseActivity mActivity;

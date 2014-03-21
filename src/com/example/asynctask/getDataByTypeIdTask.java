@@ -1,7 +1,7 @@
 package com.example.asynctask;
 
+import com.example.activity.TrendActivity;
 import com.example.utils.WebUtil;
-import com.example.waterquality.TrendActivity;
 
 import android.os.AsyncTask;
 

@@ -19,7 +19,7 @@ import org.apache.http.util.EntityUtils;
  * @created 2014-3-2 
  */
 public class WebUtil {
-	public static final String COMMON_URL = "http://192.168.1.112:8000/hardsocket/";
+	public static final String COMMON_URL = "http://192.168.20.195:8000/hardsocket/";
 	
 	public static String getDataFromUrl(String... params){
 

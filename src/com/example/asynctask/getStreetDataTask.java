@@ -3,8 +3,8 @@ package com.example.asynctask;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.activity.CurrentAreaActivity;
 import com.example.utils.WebUtil;
-import com.example.waterquality.CurrentAreaActivity;
 
 import android.os.AsyncTask;
 
