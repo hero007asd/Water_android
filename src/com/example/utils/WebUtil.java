@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -19,14 +20,11 @@ import org.apache.http.util.EntityUtils;
  * @created 2014-3-2 
  */
 public class WebUtil {
-	public static final String COMMON_URL = "http://192.168.20.195:8000/hardsocket/";
-	
+	public static final String COMMON_URL = "http://www.wetouching.com:8000/hardsocket/";
+//	public static final String COMMON_URL = "http://192.168.0.109:8000/hardsocket/";
 	public static String getDataFromUrl(String... params){
-
-		// TODO Auto-generated method stub
-
 		String httpurl = params[0].toString();
-		String str = null;
+		String str = null;  
 		// HttpPost连接对象
 		try {
 			HttpPost httpRequest = new HttpPost(httpurl);
@@ -38,12 +36,17 @@ public class WebUtil {
 			// 请求HttpRequest
 			httpRequest.setEntity(httpEntity);
 			// 取得默认的HttpClient
-			HttpClient httpClient = new DefaultHttpClient();
+			HttpClient httpClient = new DefaultHttpClient();    
 			// 取得HttpResponse
 			HttpResponse httpResponse = httpClient.execute(httpRequest);
-			str = EntityUtils.toString(httpResponse.getEntity());
 			// HttpStatus.SC_OK表示连接成功
+			if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
+				str = EntityUtils.toString(httpResponse.getEntity());
+			}else{
+				str = "";
+			}
 		} catch (Exception ex) {
+			str = "";
 			ex.printStackTrace();
 		}
 

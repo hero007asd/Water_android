@@ -30,26 +30,30 @@ import android.widget.TextView;
 public class StreetsListActivity extends BaseActivity implements
 		OnItemClickListener, OnClickListener {
 	private ListView streetList;
+	private SimpleAdapter adapter;
 	public List<Map<String, Object>> listItems;
-	private String areaId;
+	private String areaId,areaName;
 	private Button backBtn;
-	private TextView titleText;
+	private TextView titleText,areaNameText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_streets_list);
+		
 		streetList = (ListView) this.findViewById(R.id.streetsList);
 		backBtn = (Button) this.findViewById(R.id.backBtn);
 		backBtn.setOnClickListener(this);
 		titleText = (TextView) this.findViewById(R.id.titleTxt);
+		areaNameText = (TextView) this.findViewById(R.id.areaNameText);
 		titleText.setText("Ω÷µ¿¡–±Ì");
 		streetList.setOnItemClickListener(this);
 
 		Bundle b = getIntent().getExtras();
 		areaId = b.getString("area_id");
-
+		areaName = b.getString("area_name");
+		areaNameText.setText(areaName);
 	}
 
 	@Override
@@ -57,7 +61,6 @@ public class StreetsListActivity extends BaseActivity implements
 		// TODO Auto-generated method stub
 		super.onResume();
 		getCityData();
-
 		listItems = new ArrayList<Map<String, Object>>();
 		getStreetNameTask task = new getStreetNameTask(this);
 		JSONObject json = new JSONObject();
@@ -80,7 +83,7 @@ public class StreetsListActivity extends BaseActivity implements
 				map.put("streetName", json.get("street_name").toString());
 				listItems.add(map);
 			}
-			SimpleAdapter adapter = new SimpleAdapter(this, listItems,
+			adapter = new SimpleAdapter(this, listItems,
 					R.layout.street_list_item, new String[] { "streetName" },
 					new int[] { R.id.streetName });
 			streetList.setAdapter(adapter);
@@ -103,7 +106,10 @@ public class StreetsListActivity extends BaseActivity implements
 		b.putString("streetId", IdStr);
 		b.putString("streetName", nameStr);
 		b.putString("area_id", areaId);
+		b.putString("area_name", areaName);
 		i.putExtras(b);
+		listItems.clear();
+		adapter.notifyDataSetChanged();
 		startActivity(i);
 	}
 

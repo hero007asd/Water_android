@@ -6,6 +6,8 @@ import org.json.JSONObject;
 
 import com.example.asynctask.getCityDataTask;
 import com.example.asynctask.getStreetNameTask;
+import com.example.utils.ShowUtil;
+import com.example.utils.StatusUtil;
 import com.example.utils.WebUtil;
 import com.example.activity.R;
 
@@ -28,7 +30,6 @@ public class OtherAreaActivity extends BaseActivity implements OnClickListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_other_area);
 		initButton();
@@ -41,9 +42,12 @@ public class OtherAreaActivity extends BaseActivity implements OnClickListener{
 	}
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
-		getCityData();	
+		if(StatusUtil.isNetworkConnected(OtherAreaActivity.this)){
+			getCityData();
+		}else{
+			ShowUtil.showCheckNet(OtherAreaActivity.this);
+		}	
 	}
 	private void initButton(){
 		btnArr[0] = (Button) this.findViewById(R.id.hpBtn);
@@ -70,12 +74,17 @@ public class OtherAreaActivity extends BaseActivity implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		if(!StatusUtil.isNetworkConnected(OtherAreaActivity.this)){
+			ShowUtil.showCheckNet(OtherAreaActivity.this);
+			return;
+		}
 		int area_id = 0;
+		String area_name = null;
 		int id = v.getId();
 		for(int i=0; i<buttonNum; i++){
 			if(id == btnArr[i].getId()){
 				area_id = BASE_NUM + i;
+				area_name = btnArr[i].getText().toString();
 				break;
 			}
 		}
@@ -83,9 +92,9 @@ public class OtherAreaActivity extends BaseActivity implements OnClickListener{
 		i.setClass(OtherAreaActivity.this, StreetsListActivity.class);
 		Bundle b = new Bundle();
 		b.putString("area_id", area_id+"");
+		b.putString("area_name",area_name);
 		i.putExtras(b);
 		startActivity(i);
-		
 	}
 	
 	

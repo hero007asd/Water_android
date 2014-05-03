@@ -1,6 +1,8 @@
 package com.example.activity;
 
 import com.example.activity.R;
+import com.example.utils.StatusUtil;
+import com.example.utils.WebUtil;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -9,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 
 public class MainActivity extends TabActivity implements OnCheckedChangeListener {
@@ -32,7 +35,6 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
     }
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
-		// TODO Auto-generated method stub
 		switch (checkedId) {
 		case R.id.radio_current:
 			tabHost.setCurrentTabByTag("currentArea");
@@ -41,6 +43,11 @@ public class MainActivity extends TabActivity implements OnCheckedChangeListener
 			tabHost.setCurrentTabByTag("otherArea");
 			break;
 		}
+//		if(StatusUtil.isNetworkConnected(MainActivity.this)){
+//			
+//		}else{
+//			Toast.makeText(MainActivity.this, "Çë¼ì²éÍøÂç", Toast.LENGTH_LONG).show();
+//		}
 	}
 
 }
